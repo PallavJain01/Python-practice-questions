@@ -21,3 +21,19 @@ import solutions as sol
 # sol.ans_9()
 
 # sol.ans_10()
+
+# sol.ans_11()
+
+# sol.ans_12()
+
+# sol.ans_13()
+
+# sol.ans_14()
+
+# sol.ans_15()
+
+# sol.ans_16()
+
+# sol.ans_17()
+
+# sol.ans_18()

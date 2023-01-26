@@ -1,2 +1,2 @@
-# Python-practice-questions
- 
+#### Repository created to store the practice questions i have done while learning python
+#### questions are from [zhiwehu's repository](https://github.com/zhiwehu/Python-programming-exercises) which contains all these questions

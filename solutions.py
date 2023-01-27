@@ -1,5 +1,6 @@
-from math import sqrt
+import math 
 import re
+from operator import itemgetter
 
 # Template:  [Q no.] - [level i]
 # Question: ...
@@ -84,7 +85,7 @@ def ans_6():
   res = ""
   D = list(nums.split(","))
   for i in range(0, len(D)):
-    Q = int(sqrt((2 * C * int(D[i])) / H))
+    Q = int(math.sqrt((2 * C * int(D[i])) / H))
     res += str(Q) + ","
   print(res[:-1])
 
@@ -280,3 +281,296 @@ def ans_18():
       else: pass
       value.append(i)
   print(",".join(value))
+
+
+# Q.19- level 3
+"""
+Question: You are required to write a program to sort the (name, age, height) tuples by ascending order where name is string,
+age and height are numbers. The tuples are input by console. The sort criteria is: 1: Sort based on name; 2: Then sort based on age; 3:
+Then sort by score. The priority is that name > age > score. If the following tuples are given as input to the program:
+Tom,19,80 John,20,90 Jony,17,91 Jony,17,93 Json,21,85 Then, the output of the program should be:
+[('John', '20', '90'), ('Jony', '17', '91'), ('Jony', '17', '93'), ('Json', '21', '85'), ('Tom', '19', '80')]
+"""
+
+def ans_19():
+  lst = []
+  while True:
+      inp = input()
+      if not inp:
+          break
+      lst.append(tuple(inp.split(",")))
+  print(sorted(lst, key=itemgetter(0,1,2)))
+
+
+# Q.20- level 3
+# Question: Define a class with a generator which can iterate the numbers, which are divisible by 7, between a given range 0 and n.
+
+def ans_20():
+  n = int(input())
+  res = []
+  for i in range(n):
+    if (i % 7 == 0):
+      res.append(i)
+  print(res)
+
+
+# Q.21- level 3
+"""
+Question A robot moves in a plane starting from the original point (0,0). The robot can move toward UP, DOWN, LEFT and RIGHT with a given steps. 
+The trace of robot movement is shown as the following: UP 5 DOWN 3 LEFT 3 RIGHT 2 ¡­ The numbers after the direction are steps. Please write a 
+program to compute the distance from current position after a sequence of movement and original point. If the distance is a float,
+then just print the nearest integer. Example: If the following tuples are given as input to the program:
+UP 5 DOWN 3 LEFT 3 RIGHT 2 Then, the output of the program 
+should be: 2
+"""
+
+def ans_21():
+  pos = [0, 0]
+  move_type, move_value = [], []
+  while True:
+    inp = input()
+    if not inp: break
+    move_type.append((inp.split(" ")[0]))
+    move_value.append((inp.split(" ")[1]))
+
+  for i in range(len(move_type)):
+    if   move_type[i] == "R": pos[0] += int(move_value[i])
+    elif move_type[i] == "L": pos[0] -= int(move_value[i])
+    elif move_type[i] == "U": pos[1] += int(move_value[i])
+    elif move_type[i] == "D": pos[1] -= int(move_value[i])
+  print(int(math.dist((0, 0), pos)))
+
+
+# Q.22- level 3
+"""
+Question: Write a program to compute the frequency of the words from the input. The output should output after sorting the key alphanumerically. 
+Suppose the following input is supplied to the program: New to Python or choosing between Python 2 and Python 3? Read Python 2 or Python 3.
+Then, the output should be: 2:2 3.:1 3?:1 New:1 Python:5 Read:1 and:1 between:1 choosing:1 or:2 to:1
+"""
+
+def ans_22():
+  inp = input()
+  words, words_unique = inp.split(" "), sorted(set(inp.split(" ")))
+  occurences = {}
+  n = 1
+  for unique_word in words_unique:
+    for word in words:
+      if unique_word == word:
+        occurences[unique_word] = n
+        n += 1
+    n = 1
+  for word in occurences:
+    print("{}:{}".format(word, occurences[word]), end=" ")
+  
+
+# Q.23- level 1
+# Question: Write a method which can calculate square value of number
+def ans_23():
+  num = float(input())
+  print(num ** 2)
+
+
+# Q.24- level 1
+""""
+Question:
+Python has many built-in functions, and if you do not know how to use it, you can read document online or find some books.
+But Python has a built-in document function for every built-in functions.
+Please write a program to print some Python built-in functions documents, such as abs(), int(), raw_input()
+And add document for your own function Hints: The built-in document method is doc
+"""
+def ans_24():
+  inp = input()
+  print("\n", inp.__doc__)
+
+
+# Q.25- level 1
+# Question: Define a class, which have a class parameter and have a same instance parameter.
+
+class ans_25:
+  name = "Name"
+  age = "Age"
+  def __init__(self, name=None, age=None):
+    self.name = name
+    self.age = age
+
+
+# Q.26
+# Question: Define a function which can compute the sum of two numbers.
+def ans_26(num1, num2):
+  print( num1 + num2)
+
+# Q.27
+# Question: Define a function that can convert a integer into a string and print it in console.
+def ans_27(inp):
+  print(str(inp))
+
+
+# Q.28 was a duplicate of Q.27
+
+
+# Q.29
+# Question: Define a function that can receive two integral numbers in string form and compute their sum and then print it in console.
+
+def ans_29(s1, s2):
+  print(int(s1) + int(s2))
+
+
+# Q.30
+# Question: Define a function that can accept two strings as input and concatenate them and then print it in console.
+
+def ans_30(s1, s2):
+  print(s1 + s2)
+
+
+# Q.31
+# Question: Define a function that can accept two strings as input and print the string with maximum length in console.
+# If two strings have the same length, then the function should print al l strings line by line.
+
+def ans_31(s1, s2):
+  if (len(s1) > len(s2)): print(s1)
+  elif (len(s2) > len(s1)): print(s2)
+  else: print(s1 + "\n"+ s2)
+
+
+# Q.32
+# Question: Define a function that can accept an integer number as input and print the "It is an even number" if the number is even,
+# otherwise print "It is an odd number".
+
+def ans_32(num):
+  if (int(num) % 2  == 0):  print("It is an even number")
+  elif (int(num) % 2 == 1): print("It is an odd number" )
+
+
+# Q.33
+# Question: Define a function which can print a dictionary where the keys are numbers between 1 and 3 (both included) and the values
+# are square of keys.
+
+def ans_33():
+  res = dict()
+  for i in range(1, 4):
+    res[i] = i ** 2
+  print(res)
+
+
+# Q.34
+# Question: Define a function which can print a dictionary where the keys are numbers between 1 and 20 (both included) and the values
+# are square of keys.
+
+def ans_34():
+  res = dict()
+  for i in range(1, 21):
+    res[i] = i ** 2
+  print(res)
+
+
+# Q.35
+# Question: Define a function which can generate a dictionary where the keys are numbers between 1 and 20 (both included) and the values
+# are square of keys. The function should just print the values only.
+
+def ans_35():
+  res = dict()
+  for i in range(1, 21):
+    res[i] = i ** 2
+  print(res.values())
+
+# Q.36
+# Question: Define a function which can generate a dictionary where the keys are numbers between 1 and 20 (both included) and the values
+# are square of keys. The function should just print the keys only.
+
+def ans_36():
+  res = dict()
+  for i in range(1, 21):
+    res[i] = i ** 2
+  print(res.items())
+
+
+# Q.37
+# Question: Define a function which can generate and print a list where the values are square of numbers between 1 and 20 (both included).
+
+def ans_37():
+  res = list()
+  for i in range(1, 21):
+    res.append(i ** 2)
+  print(res)
+
+# Q.38
+# Question: Define a function which can generate a list where the values are square of numbers between 1 and 20 (both included).
+# Then the function needs to print the first 5 elements in the list.
+
+
+def ans_38():
+  res = list()
+  for i in range(1, 21):
+    res.append(i ** 2)
+  print(res[:5])
+
+
+# Q.39
+# Question: Define a function which can generate a list where the values are square of numbers between 1 and 20 (both included).
+# Then the function needs to print the last 5 elements in the list.
+
+def ans_39():
+  res = list()
+  for i in range(1, 21):
+    res.append(i ** 2)
+  print(res[-5:])
+
+
+# Q.40
+# Question: Define a function which can generate a list where the values are square of numbers between 1 and 20 (both included).
+# Then the function needs to print all values except the first 5 elements in the list.
+
+def ans_40():
+  res = list()
+  for i in range(1, 21):
+    res.append(i ** 2)
+  print(res[5:])
+
+
+# Q.41
+# Question: Define a function which can generate and print a tuple where the value are square of numbers between 1 and 20 (both included).
+
+def ans_41():
+  res = list()
+  for i in range(1, 21):
+    res.append(i ** 2)
+  print(tuple(res))
+
+
+# Q.42
+# Question: With a given tuple (1,2,3,4,5,6,7,8,9,10), write a program to print the first half values in one line and the last half values in one line.
+
+def ans_42():
+  tple = (1,2,3,4,5,6,7,8,9,10)
+  first_half = tple[:len(tple) // 2]
+  second_half = tple[len(tple) // 2:]
+  print("{}\n{}".format(first_half, second_half))
+
+
+# Q.43
+# Question: Write a program to generate and print another tuple whose values are even numbers in the given tuple (1,2,3,4,5,6,7,8,9,10).
+
+def ans_43():
+  tple = (1,2,3,4,5,6,7,8,9,10)
+  even_nums = []
+  for num in tple:
+    if (num % 2 == 0): even_nums.append(num)
+  print(tuple(even_nums))
+
+
+# Q.44
+# Question: Write a program which accepts a string as input to print "Yes" if the string is "yes" or "YES" or "Yes", otherwise print "No".
+
+def ans_44():
+  inp = input()
+  if (inp.lower() == "yes"): print("Yes")
+  else: print("No")
+
+
+# Q.45
+# Question: Write a program which can filter even numbers in a list by using filter function. The list is: [1,2,3,4,5,6,7,8,9,10].
+
+def ans_45():
+  lst = [1,2,3,4,5,6,7,8,9,10]
+  even_nums = filter(lambda x: x%2==0, lst)
+  print(even_nums)

@@ -37,7 +37,8 @@ def ans_2():
 
 # Q.3- level 1
 # Question: With a given integral number n, write a program to generate a dictionary that contains (i, i*i) such that is an integral number between 1 and n (both included)
-# and then the program should print the dictionary. Suppose the following input is supplied to the program: 8 Then, the output should be: {1: 1, 2: 4, 3: 9, 4: 16, 5: 25, 6: 36, 7: 49, 8: 64}
+# and then the program should print the dictionary. Suppose the following input is supplied to the program: 8 Then, the output should be:
+# {1: 1, 2: 4, 3: 9, 4: 16, 5: 25, 6: 36, 7: 49, 8: 64}
 
 def ans_3():
   num = input()
@@ -92,7 +93,8 @@ def ans_6():
 
 
 # Q.7- level 2
-# Question: Write a program which takes 2 digits, X,Y as input and generates a 2-dimensional array. The element value in the i-th row and j-th column of the array should be i*j.
+# Question: Write a program which takes 2 digits, X,Y as input and generates a 2-dimensional array.
+# The element value in the i-th row and j-th column of the array should be i*j.
 # Note: i=0,1.., X-1; j=0,1,Y-1. Example Suppose the following inputs are given to the program: 3,5 Then, the output of the program should be:
 # [
 #  [0, 0, 0, 0, 0],
@@ -139,7 +141,8 @@ def ans_9():
 
 # Q.10- level 2
 # Question: Write a program that accepts a sequence of whitespace separated words as input and prints the words after removing all duplicate words and
-# sorting them alphanumerically. Suppose the following input is supplied to the program: hello world and practice makes perfect and hello world again Then, the output should be: again and hello makes perfect practice world
+# sorting them alphanumerically. Suppose the following input is supplied to the program: hello world and practice makes perfect and hello world again
+# Then, the output should be: again and hello makes perfect practice world
 
 def ans_10():
   words = [i for i in input().split(" ")]

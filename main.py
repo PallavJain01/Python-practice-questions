@@ -92,3 +92,7 @@ import solutions as sol
 # sol.ans_44()
 
 # sol.ans_45()
+
+# sol.ans_46()
+
+# sol.ans_47()

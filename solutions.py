@@ -576,5 +576,29 @@ def ans_44():
 
 def ans_45():
   lst = [1,2,3,4,5,6,7,8,9,10]
+  res = []
   even_nums = filter(lambda x: x%2==0, lst)
+  for i in range(len(even_nums)):
+    if even_nums[i]: res.append(lst[i])
+  print(res)
+
+
+# Q.46
+# Question: Write a program which can map() to make a list whose elements are square of elements in [1,2,3,4,5,6,7,8,9,10].
+
+def ans_46():
+  lst = [1,2,3,4,5,6,7,8,9,10]
+  res = []
+  even_nums = list(map(lambda x: x%2==0, lst))
+  for i in range(len(even_nums)):
+    if even_nums[i]: res.append(lst[i])
+  print(res)
+
+
+# Q.47
+# Question: Write a program which can map() and filter() to make a list whose elements are square of even number in [1,2,3,4,5,6,7,8,9,10].
+
+def ans_47():
+  lst = [1,2,3,4,5,6,7,8,9,10]
+  even_nums = list(map(lambda x: x**2, filter(lambda x: x%2==0, lst)))
   print(even_nums)

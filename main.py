@@ -1,4 +1,5 @@
 import solutions as sol
+from solutions import Circle, Rectangle, Shape
 
 # sol.ans_1()
 
@@ -96,3 +97,31 @@ import solutions as sol
 # sol.ans_46()
 
 # sol.ans_47()
+
+# sol.ans_48()
+
+# sol.ans_49()
+
+# ans_50
+# American = sol.American()
+# American.printNationality()
+
+# ans_51
+# nAmerican = sol.nAmerican()
+# nNewYorker = sol.nNewYorker()
+# print(nAmerican)
+# print(nNewYorker)
+
+# ans_52
+# circle1 = Circle(10)
+# circle1.area()
+
+# ans_53
+# rect1 = Rectangle(10, 10)
+# rect1.area()
+
+# ans_54
+# shape1 = Shape().Square(10, 10)
+# shape1.area()
+
+# sol.ans_55()

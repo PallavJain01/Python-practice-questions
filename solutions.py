@@ -602,3 +602,81 @@ def ans_47():
   lst = [1,2,3,4,5,6,7,8,9,10]
   even_nums = list(map(lambda x: x**2, filter(lambda x: x%2==0, lst)))
   print(even_nums)
+
+
+# Q.48
+# Question: Write a program which can filter() to make a list whose elements are even number between 1 and 20 (both included).
+
+def ans_48():
+  res = list(filter(lambda x: x%2==0, range(1, 21)))
+  print(res)
+
+
+# Q.49
+# Question: Write a program which can map() to make a list whose elements are square of numbers between 1 and 20 (both included).
+
+def ans_49():
+  res = list(map(lambda x: x**2, range(1, 21)))
+  print(res)
+
+
+# Q.50
+# Question: Define a class named American which has a static method called printNationality.
+
+class American(object):
+  @staticmethod
+  def printNationality():
+    print("American")
+
+
+# Q.51
+# Question: Define a class named American and its subclass NewYorker.
+
+class nAmerican(object): pass
+class nNewYorker(nAmerican): pass
+
+
+# Q.52
+# Question: Define a class named Circle which can be constructed by a radius. The Circle class has a method which can compute the area.
+
+class Circle(object):
+  def __init__(self, radius):
+    self.radius = radius
+  
+  def area(self):
+    print(math.pi *  self.radius * self.radius)
+
+
+# Q.53
+# Question: Define a class named Rectangle which can be constructed by a length and width. The Rectangle class has a method which can compute the area.
+
+class Rectangle(object):
+  def __init__(self, length, width):
+    self.length = length
+    self.width = width
+  def area(self):
+    print(self.length * self.width)
+
+
+# Q.54
+# Question: Define a class named Shape and its subclass Square. The Square class has an init function which takes a length as argument. Both classes have a area function which can print the area of the shape where Shape's area is 0 by default.
+
+class Shape(object):
+  def __init__(self):
+    pass
+  def area(self):
+    return 0
+  
+  class Square(object):
+    def __init__(self, length, width):
+      self.length = length
+      self.width = width
+    def area(self):
+      print(self.length * self.width)
+      
+
+# Q.55
+# Question: Please raise a RuntimeError exception.
+
+def ans_55():
+  raise RuntimeError("Runtime error")
